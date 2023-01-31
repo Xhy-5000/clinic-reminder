@@ -7,22 +7,7 @@ export interface Message {
   id: number;
   read: boolean;
 }
-// const mysql = require('mysql');
-// const conn = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'emma',
-//   password: 'emma',
-//   database: 'test'
-// });
-// conn.connect();
-// let sql: string= 'select * from test';
-// conn.query(sql, (err:any, result:any) => {
-//   if (err) {
-//       console.log(err);
-//   } else {
-//       console.log(result);
-//   }
-// });
+
 @Injectable({
   providedIn: 'root'
 })
