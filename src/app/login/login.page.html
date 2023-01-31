@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Patient ID</ion-label>
+      <ion-input placeholder="Enter your patient id" [(ngModel)]="patientInfo.patientID"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Password input</ion-label>
+      <ion-input type="password" value="password" placeholder="Enter your password" [(ngModel)]="patientInfo.password"></ion-input>
+    </ion-item>
+    
+    <ion-button href="../home">
+      <ion-label>Log in</ion-label>
+    </ion-button>
+
+  </ion-list>
+  <!-- {{patientInfo|json}} -->
+</ion-content>
