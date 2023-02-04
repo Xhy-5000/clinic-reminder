@@ -3,7 +3,7 @@
     <ion-title>
       Inbox
     </ion-title>
-    <ion-button href="../">
+    <ion-button (click)="logout()">
       <ion-label>Log out</ion-label>
     </ion-button>
   </ion-toolbar>
@@ -17,12 +17,27 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        Reminder List
       </ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    <ion-item *ngFor="let m of reminders" class="reminder">
+      <ion-row class="ion-align-items-center">
+				<ion-col (click)="openDetails(m.reminderid)">
+					<ion-label
+						color="dark"
+						class="ion-text-wrap ion-text-capitalize"
+						[style.font-weight]="m.isfinished==0 ? 'bold' : ''"
+					>
+						<p class="excerpt">
+							{{ (m.detail.length>50)? (m.detail | slice:0:50)+'...':(m.detail) }}
+						</p>
+					</ion-label>
+				</ion-col>
+			</ion-row>
+    </ion-item>
   </ion-list>
+
 </ion-content>

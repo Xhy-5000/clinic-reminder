@@ -4,22 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>Patient ID</ion-label>
-      <ion-input placeholder="Enter your patient id" [(ngModel)]="patientInfo.patientID"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Password input</ion-label>
-      <ion-input type="password" value="password" placeholder="Enter your password" [(ngModel)]="patientInfo.password"></ion-input>
-    </ion-item>
-    
-    <ion-button href="../home">
-      <ion-label>Log in</ion-label>
-    </ion-button>
-
-  </ion-list>
-  <!-- {{patientInfo|json}} -->
+<ion-content fullscreen={true}>
+  <form [formGroup]="loginForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Patient ID</ion-label>
+        <ion-input required type="number" class="form-control" id="id" formControlName="id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password input</ion-label>
+        <ion-input type="password" class="form-control" id="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-button type="submit" (click)="onSubmit()">
+        <ion-label>Log in</ion-label>
+      </ion-button>
+    </ion-list>
+  </form>
+  
 </ion-content>

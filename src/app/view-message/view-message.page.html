@@ -6,24 +6,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="message">
+<ion-content [fullscreen]="true" *ngIf="reminder">
   <ion-item>
-    <ion-icon name="person-circle" color="primary"></ion-icon>
     <ion-label class="ion-text-wrap">
       <h2>
-        {{ message.fromName }}
-        <span class="date">
-          <ion-note>{{ message.date }}</ion-note>
-        </span>
+        reminder id:<br>
+        {{reminder.reminderid}}
       </h2>
-      <h3>To: <ion-note>Me</ion-note></h3>
+      <h3>
+        <!-- {{ reminder.patientname }} -->
+        <ion-item>
+          <ion-label position="stacked">Post Time</ion-label><br>
+          <ion-datetime display-format="DD.MM.YYYY HH:mm">{{ reminder.posttime }}</ion-datetime>
+        </ion-item>
+        <p>
+          Reminder Exist Time:<br>
+          {{reminder.existtime}}
+        </p>
+      </h3>
     </ion-label>
   </ion-item>
   
   <div class="ion-padding">
-    <h1>{{ message.subject }}</h1>
-    <p>
-      view message
+    <!-- <h1>{{ message.subject }}</h1> -->
+    <p>Reminder Details<br>
+      {{reminder.detail}}
     </p>
   </div>
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    This reminder is finished
+  </ion-button>
 </ion-content>
