@@ -32,7 +32,7 @@
 						[style.font-weight]="m.isfinished==0 ? 'bold' : ''"
 					>
 						<p class="excerpt">
-							{{ (m.detail.length>50)? (m.detail | slice:0:50)+'...':(m.detail) }}
+							{{ (m.detail.length>50)? (m.detail | slice:0:50)+'...':(m.detail) }} {{m.reminderid}}
 						</p>
 					</ion-label>
 				</ion-col>
